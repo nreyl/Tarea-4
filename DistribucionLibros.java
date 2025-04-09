@@ -4,16 +4,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class DistribucionLibros {
-    
-    // Constantes para identificar los tipos de nodos
-    private static final int FUENTE = 0;
-    private static final int SUMIDERO = 1;
-    private static final int FABRICA = 2;
-    private static final int LIBRERIA = 3;
-    private static final int BODEGA_ENTRADA = 4;
-    private static final int BODEGA_SALIDA = 5;
-    private static final int CAMION = 6;
-    
+ 
     // Infinito para representar capacidad ilimitada
     private static final int INFINITO = Integer.MAX_VALUE;
     
@@ -60,15 +51,11 @@ public class DistribucionLibros {
                 int tipoDestino = Integer.parseInt(partes[3]); // 0: librería, 1: bodega
                 
                 // Convertir a índices internos
-                if (tipoOrigen == 0) {  // Fábrica
-                    origen = origen;  // Las fábricas ya están indexadas desde 0
-                } else {  // Bodega
+                if (tipoOrigen == 1) {  // Si es bodega
                     origen = origen + numFabricas;  // Las bodegas se indexan después de las fábricas
                 }
                 
-                if (tipoDestino == 0) {  // Librería
-                    destino = destino;  // Las librerías ya están indexadas desde 0
-                } else {  // Bodega
+                if (tipoDestino == 1) {  // Si es bodega
                     destino = destino + numLibrerias;  // Las bodegas se indexan después de las librerías
                 }
                 

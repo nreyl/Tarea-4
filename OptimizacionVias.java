@@ -71,8 +71,6 @@ public class OptimizacionVias {
         // Crear las aristas para el grafo no dirigido
         for (Arista arista : aristas) {
             Par directa = new Par(arista.origen, arista.destino);
-            Par inversa = new Par(arista.destino, arista.origen);
-            
             if (!existeDobleVia.getOrDefault(directa, false)) {
                 // Si no es una doble vía, agregar con su costo de conversión
                 aristasNoDir.add(new Arista(arista.origen, arista.destino, arista.costo));
